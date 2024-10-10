@@ -20,6 +20,7 @@ public class PasswordRecoveryPage extends BasePage {
 
   @Step("Нажать на ссылку 'Войти'")
   public void clickLoginLink() {
+    waitForLocator(loginLink);
     driver.findElement(loginLink).click();
   }
 

@@ -71,6 +71,7 @@ public class ConstructorTest extends BaseTest {
     MainPage mainPage = new MainPage(driver);
     mainPage.open();
 
+    mainPage.clickFillingsButton();
     mainPage.clickSaucesButton();
 
     Assert.assertTrue("Секция 'Соусы' не видна на экране", mainPage.isElementInViewport(mainPage.saucesSection));
