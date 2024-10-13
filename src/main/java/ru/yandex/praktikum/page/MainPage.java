@@ -20,12 +20,12 @@ public class MainPage extends BasePage {
   // Заголовок "Соберите бургер"
   private By header = By.xpath("//h1[text()='Соберите бургер']");
 
-  // Кнопка "Булки"
-  private By bunsButton = By.xpath("//span[text()='Булки']");
-  // Кнопка "Соусы"
-  private By saucesButton = By.xpath("//span[text()='Соусы']");
-  // Кнопка "Начинки"
-  private By fillingsButton = By.xpath("//span[text()='Начинки']");
+  // Вкладка "Булки"
+  public By bunsTab = By.xpath("//span[text()='Булки']/parent::div");
+  // Вкладка "Соусы"
+  public By saucesTab = By.xpath("//span[text()='Соусы']/parent::div");
+  // Вкладка "Начинки"
+  public By fillingsTab = By.xpath("//span[text()='Начинки']/parent::div");
 
   // Секция "Булки"
   public By bunsSection = By.xpath("//h2[text()='Булки']");
@@ -58,22 +58,22 @@ public class MainPage extends BasePage {
 
   @Step("Нажать на кнопку 'Булки'")
   public void clickBunsButton() {
-    waitForLocator(bunsButton);
-    driver.findElement(bunsButton).click();
+    waitForLocator(bunsTab);
+    driver.findElement(bunsTab).click();
     waitForElementInViewport(bunsSection);
   }
 
   @Step("Нажать на кнопку 'Соусы'")
   public void clickSaucesButton() {
-    waitForLocator(saucesButton);
-    driver.findElement(saucesButton).click();
+    waitForLocator(saucesTab);
+    driver.findElement(saucesTab).click();
     waitForElementInViewport(saucesSection);
   }
 
   @Step("Нажать на кнопку 'Начинки'")
   public void clickFillingsButton() {
-    waitForLocator(fillingsButton);
-    driver.findElement(fillingsButton).click();
+    waitForLocator(fillingsTab);
+    driver.findElement(fillingsTab).click();
     waitForElementInViewport(fillingsSection);
   }
 
@@ -89,5 +89,10 @@ public class MainPage extends BasePage {
             "return (rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && " +
             "rect.right <= (window.innerWidth || document.documentElement.clientWidth));",
         element);
+  }
+
+  public boolean isSectionTabSelected(By locator) {
+    WebElement element = driver.findElement(locator);
+    return element.getAttribute("class").contains("tab_tab_type_current__2BEPc");
   }
 }

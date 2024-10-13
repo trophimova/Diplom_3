@@ -63,6 +63,10 @@ public class ConstructorTest extends BaseTest {
 
     mainPage.clickFillingsButton();
 
+    Assert.assertTrue("Вкладка 'Начинки' не выбрана", mainPage.isSectionTabSelected(mainPage.fillingsTab));
+    Assert.assertFalse("Вкладка 'Соусы' выбрана", mainPage.isSectionTabSelected(mainPage.saucesTab));
+    Assert.assertFalse("Вкладка 'Булки' выбрана", mainPage.isSectionTabSelected(mainPage.bunsTab));
+
     Assert.assertTrue("Секция 'Начинки' не видна на экране", mainPage.isElementInViewport(mainPage.fillingsSection));
   }
 
@@ -74,6 +78,10 @@ public class ConstructorTest extends BaseTest {
     mainPage.clickFillingsButton();
     mainPage.clickSaucesButton();
 
+    Assert.assertTrue("Вкладка 'Соусы' не выбрана", mainPage.isSectionTabSelected(mainPage.saucesTab));
+    Assert.assertFalse("Вкладка 'Булки' выбрана", mainPage.isSectionTabSelected(mainPage.bunsTab));
+    Assert.assertFalse("Вкладка 'Начинки' выбрана", mainPage.isSectionTabSelected(mainPage.fillingsTab));
+
     Assert.assertTrue("Секция 'Соусы' не видна на экране", mainPage.isElementInViewport(mainPage.saucesSection));
   }
 
@@ -84,6 +92,10 @@ public class ConstructorTest extends BaseTest {
 
     mainPage.clickFillingsButton();
     mainPage.clickBunsButton();
+
+    Assert.assertTrue("Вкладка 'Булки' не выбрана", mainPage.isSectionTabSelected(mainPage.bunsTab));
+    Assert.assertFalse("Вкладка 'Начинки' выбрана", mainPage.isSectionTabSelected(mainPage.fillingsTab));
+    Assert.assertFalse("Вкладка 'Соусы' выбрана", mainPage.isSectionTabSelected(mainPage.saucesTab));
 
     Assert.assertTrue("Секция 'Булки' не видна на экране", mainPage.isElementInViewport(mainPage.bunsSection));
   }
