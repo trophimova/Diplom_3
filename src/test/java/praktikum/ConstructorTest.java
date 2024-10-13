@@ -61,7 +61,7 @@ public class ConstructorTest extends BaseTest {
     MainPage mainPage = new MainPage(driver);
     mainPage.open();
 
-    mainPage.clickFillingsButton();
+    mainPage.clickFillingsTab();
 
     Assert.assertTrue("Вкладка 'Начинки' не выбрана", mainPage.isSectionTabSelected(mainPage.fillingsTab));
     Assert.assertFalse("Вкладка 'Соусы' выбрана", mainPage.isSectionTabSelected(mainPage.saucesTab));
@@ -75,8 +75,8 @@ public class ConstructorTest extends BaseTest {
     MainPage mainPage = new MainPage(driver);
     mainPage.open();
 
-    mainPage.clickFillingsButton();
-    mainPage.clickSaucesButton();
+    mainPage.clickFillingsTab();
+    mainPage.clickSaucesTab();
 
     Assert.assertTrue("Вкладка 'Соусы' не выбрана", mainPage.isSectionTabSelected(mainPage.saucesTab));
     Assert.assertFalse("Вкладка 'Булки' выбрана", mainPage.isSectionTabSelected(mainPage.bunsTab));
@@ -90,8 +90,8 @@ public class ConstructorTest extends BaseTest {
     MainPage mainPage = new MainPage(driver);
     mainPage.open();
 
-    mainPage.clickFillingsButton();
-    mainPage.clickBunsButton();
+    mainPage.clickFillingsTab();
+    mainPage.clickBunsTab();
 
     Assert.assertTrue("Вкладка 'Булки' не выбрана", mainPage.isSectionTabSelected(mainPage.bunsTab));
     Assert.assertFalse("Вкладка 'Начинки' выбрана", mainPage.isSectionTabSelected(mainPage.fillingsTab));

@@ -56,22 +56,22 @@ public class MainPage extends BasePage {
     return driver.findElement(header).isDisplayed();
   }
 
-  @Step("Нажать на кнопку 'Булки'")
-  public void clickBunsButton() {
+  @Step("Нажать на вкладку 'Булки'")
+  public void clickBunsTab() {
     waitForLocator(bunsTab);
     driver.findElement(bunsTab).click();
     waitForElementInViewport(bunsSection);
   }
 
-  @Step("Нажать на кнопку 'Соусы'")
-  public void clickSaucesButton() {
+  @Step("Нажать на вкладку 'Соусы'")
+  public void clickSaucesTab() {
     waitForLocator(saucesTab);
     driver.findElement(saucesTab).click();
     waitForElementInViewport(saucesSection);
   }
 
-  @Step("Нажать на кнопку 'Начинки'")
-  public void clickFillingsButton() {
+  @Step("Нажать на вкладку 'Начинки'")
+  public void clickFillingsTab() {
     waitForLocator(fillingsTab);
     driver.findElement(fillingsTab).click();
     waitForElementInViewport(fillingsSection);
